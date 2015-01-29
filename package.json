@@ -1,7 +1,7 @@
 {
   "name": "grunt-autospritesmith",
   "description": "Automatic sprite generator based on grunt-spritesmith",
-  "version": "0.0.1b",
+  "version": "0.0.1-beta",
   "homepage": "https://github.com/smbeiragh/grunt-autospritesmith",
   "author": {
     "name": "smbeiragh",
