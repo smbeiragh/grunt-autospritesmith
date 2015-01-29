@@ -37,47 +37,100 @@ grunt.initConfig({
 
 ### Options
 
-#### options.separator
+#### options.sprite
+Type: `Object`
+Default value: `{padding: 5, cssFormat: 'css'}`
+
+An object value that is used as default options for grunt-spritesmith task.
+It's as same as grunt-spritesmith config and supports all grunt-spritesmith options except src, dest and destCSS
+
+#### options.destPathMap
 Type: `String`
-Default value: `',  '`
+Default value: `''`
 
-A string value that is used to do something with whatever.
+A string value that is used to do change path of generated sprite image files relative to base images path.
 
-#### options.punctuation
+#### options.destCssPathMap
 Type: `String`
-Default value: `'.'`
+Default value: `''`
 
-A string value that is used to do something else with whatever else.
+A string value that is used to do change path of generated style files relative to base images path.
 
 ### Usage Examples
 
-#### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
+### Basic Usage
+
+Project structure:
+
+app
+--img
+----test-sprite
+------icon1.png
+------icon2.png
+------sprite
+--------test-sprite.css
+--------test-sprite.png
 
 ```js
 grunt.initConfig({
   autospritesmith: {
     options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
+    default_options: {
+      options: {},
+      files: [
+        {
+          expand: true,
+          cwd: 'app/img',
+          src: '**/*-sprite',
+          filter: 'isDirectory'
+        }
+      ]
     },
   },
 });
 ```
 
-#### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
+#### Advance Options
+Using sass and generating sprite files in a custom path.
+
+Project structure:
+
+app
+--img
+----genrated-images
+------test1-sprite.png
+------test2-sprite.png
+----sprite
+------test1-sprites
+--------icon1.png
+--------icon2.png
+------test2-sprites
+--------icon1.png
+--------icon2.png
+--scss
+----sprites
+------test1-sprite.scss
+------test2-sprite.scss
 
 ```js
 grunt.initConfig({
   autospritesmith: {
     options: {
-      separator: ': ',
-      punctuation: ' !!!',
+      sprite:{
+        padding: 2,
+        cssFormat:'scss'
+      },
+      destPathMap:'../../generated-images',
+      destCssPathMap:'../../../scss/sprites'
     },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
+    files: [
+      {
+        expand: true,
+        cwd: 'tmp/custom_options',
+        src: '**/*-sprite',
+        filter: 'isDirectory'
+      }
+    ]
   },
 });
 ```
@@ -86,4 +139,4 @@ grunt.initConfig({
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
-_(Nothing yet)_
+2015-01-28 v0.0.1-beta Initial Release.
