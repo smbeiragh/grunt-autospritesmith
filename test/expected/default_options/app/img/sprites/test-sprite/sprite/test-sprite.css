@@ -1,0 +1,25 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+```html
+<i class="icon-home"></i>
+```
+*/
+.icon-box-add {
+  background-image: url(test-sprite.png);
+  background-position: 0px 0px;
+  width: 32px;
+  height: 32px;
+}
+.icon-box-remove {
+  background-image: url(test-sprite.png);
+  background-position: -37px 0px;
+  width: 32px;
+  height: 32px;
+}
+.icon-clock {
+  background-image: url(test-sprite.png);
+  background-position: 0px -37px;
+  width: 32px;
+  height: 32px;
+}
