@@ -1,6 +1,6 @@
 # grunt-autospritesmith
 
-> The best Grunt plugin ever.
+> Automatic sprite generator based on grunt-spritesmith.
 
 ## Getting Started
 This plugin requires Grunt `~0.4.5`
@@ -63,13 +63,21 @@ A string value that is used to do change path of generated style files relative 
 Project structure:
 
 app
+
 --img
+
 ----test-sprite
+
 ------icon1.png
+
 ------icon2.png
+
 ------sprite
+
 --------test-sprite.css
+
 --------test-sprite.png
+
 
 ```js
 grunt.initConfig({
@@ -96,21 +104,37 @@ Using sass and generating sprite files in a custom path.
 Project structure:
 
 app
+
 --img
+
 ----genrated-images
+
 ------test1-sprite.png
+
 ------test2-sprite.png
+
 ----sprite
+
 ------test1-sprites
+
 --------icon1.png
+
 --------icon2.png
+
 ------test2-sprites
+
 --------icon1.png
+
 --------icon2.png
+
 --scss
+
 ----sprites
+
 ------test1-sprite.scss
+
 ------test2-sprite.scss
+
 
 ```js
 grunt.initConfig({
