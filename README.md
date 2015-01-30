@@ -3,7 +3,7 @@
 > Automatic sprite generator based on grunt-spritesmith.
 
 ## Why I should use this plugin
-In middle scale and large scale project, editing and configuring every sprite manually and editing, editing, editing Gruntfile is not  a convenient task, even on a small team you can't expect you co-worker to re-config Gruntfile just to add a sprite to project, so every time you should waste your time to do it for him/her. using this plugin you can set a few conventions and people will be able to put some images in some path and include some style some where else and that is all they need. also nobody likes a lot of code and config and re-config just for striping!
+In middle scale and large scale project, editing and configuring every sprite manually and editing, editing, editing Gruntfile is not  a convenient task, even on a small team you can't expect you co-worker to re-config Gruntfile just to add a sprite to project, so every time you should waste your time to do it for him/her. using this plugin you can set a few conventions and people will be able to put some images in some path and include some style some where else and that is all they need. also nobody likes a lot of code and config and re-config just for sprite-ing!
 
 ## Getting Started
 This plugin requires Grunt `~0.4.5`
