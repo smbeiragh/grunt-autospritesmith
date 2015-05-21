@@ -38,8 +38,8 @@ module.exports = function(grunt) {
 
     target = _.merge(options.sprite, target);
 
-    target.src = path.join( dir, '*.png');
-    target.dest = path.join( dir, options.destPathMap || 'sprite', spriteName + '.png');
+    target.src = path.join( dir, '*.' + options.imageFormat);
+    target.dest = path.join( dir, options.destPathMap || 'sprite', spriteName + '.' + options.imageFormat);
     target.destCss = path.join( dir, options.destCssPathMap || 'sprite', spriteName + '.' + target.cssFormat );
 
     conf[targetName] = target;
@@ -51,7 +51,8 @@ module.exports = function(grunt) {
   grunt.registerMultiTask('autospritesmith', 'The best Grunt plugin ever.', function() {
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
-      sprite:defaultSpriteSmithConf
+      sprite:defaultSpriteSmithConf,
+      imageFormat: 'png'
     });
 
     var target = this.target;
