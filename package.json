@@ -36,10 +36,13 @@
     "node-dir-diff": "0.0.1-a"
   },
   "peerDependencies": {
-    "grunt": "~0.4.5"
+    "grunt": ">=0.4.0"
   },
   "keywords": [
-    "gruntplugin","sprite","auto","spritesmith"
+    "gruntplugin",
+    "sprite",
+    "auto",
+    "spritesmith"
   ],
   "dependencies": {
     "lodash": "^3.0.0"
