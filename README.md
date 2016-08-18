@@ -91,6 +91,12 @@ Default value: `''`
 
 A string value that is used to do change path of generated style files relative to base images path.
 
+#### options.imageFormat
+Type: `String`
+Default value: `'png'`
+
+A string value that is used for getting images in specified format and generate sprite in it.
+
 ### Usage Examples
 
 ### Basic Usage
