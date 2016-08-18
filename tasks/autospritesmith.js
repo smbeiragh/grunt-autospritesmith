@@ -21,6 +21,11 @@ module.exports = function(grunt) {
     cssFormat: 'css'
   };
 
+  var deafultOptions = {
+    sprite:defaultSpriteSmithConf,
+    imageFormat: 'png'
+  };
+
   var pathToTargetRegex = {
     '\\': /\\/g,
     '/': /\//g
@@ -50,10 +55,7 @@ module.exports = function(grunt) {
 
   grunt.registerMultiTask('autospritesmith', 'The best Grunt plugin ever.', function() {
     // Merge task-specific and/or target-specific options with these defaults.
-    var options = this.options({
-      sprite:defaultSpriteSmithConf,
-      imageFormat: 'png'
-    });
+    var options = this.options(deafultOptions);
 
     var target = this.target;
 
